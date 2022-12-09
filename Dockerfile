@@ -110,9 +110,6 @@ RUN \
 
 FROM osx-cross-base AS final
 
-LABEL maintainer="Artur Troian <troian dot ap at gmail dot com>"
-LABEL "org.opencontainers.image.source"="https://github.com/goreleaser/goreleaser-cross"
-
 ARG DEBIAN_FRONTEND=noninteractive
 
 COPY --from=osx-cross "${OSX_CROSS_PATH}/target" "${OSX_CROSS_PATH}/target"
