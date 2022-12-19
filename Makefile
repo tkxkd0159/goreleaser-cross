@@ -3,8 +3,8 @@ include .env
 
 
 TAG_VERSION     ?= $(GORELEASER_VERSION)-$(GO_VERSION)
-IMAGE_BASE_NAME := line/goreleaser-cross-base:$(TAG_VERSION)
-IMAGE_NAME      := line/goreleaser-cross:$(TAG_VERSION)
+IMAGE_BASE_NAME := line/goreleaserx:$(TAG_VERSION)
+IMAGE_NAME      := line/goreleaserx-wasm:$(TAG_VERSION)
 SUBIMAGES = amd64
 
 DOCKER_BUILD=docker build
