@@ -3,8 +3,6 @@ on:
   push:
     tags:
       - v*
-    branches:
-      - line
 
 env:
   GO111MODULE: on
