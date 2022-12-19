@@ -7,7 +7,7 @@ ARG GORELEASER_VERSION
 ARG APT_MIRROR
 ARG TINI_VERSION
 ARG GORELEASER_DOWNLOAD_URL=https://github.com/goreleaser/goreleaser/releases/download/v${GORELEASER_VERSION}
-ARG TARGETARCH=amd64
+ARG TARGETARCH
 
 COPY entrypoint.sh /
 
@@ -104,7 +104,7 @@ RUN \
     /usr/share/doc
 
 # install a copy of mingw with aarch64 support to enable windows on arm64
-ARG TARGETARCH=amd64
+ARG TARGETARCH
 ARG MINGW_VERSION=20220906
 
 RUN \

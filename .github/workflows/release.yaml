@@ -49,6 +49,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           build-args: |
             "GO_VERSION=${{env.GO_VERSION}}"
+            "TINI_VERSION=${{env.TINI_VERSION}}"
             "GORELEASER_VERSION=${{env.GORELEASER_VERSION}}"
             "DEBIAN_FRONTEND=${{env.DEBIAN_FRONTEND}}"
             "OSX_SDK=${{env.OSX_SDK}}"
