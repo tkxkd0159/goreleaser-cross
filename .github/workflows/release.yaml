@@ -56,3 +56,21 @@ jobs:
             "OSX_SDK_SUM=${{env.OSX_SDK_SUM}}"
             "OSX_VERSION_MIN=${{env.OSX_VERSION_MIN}}"
             "OSX_CROSS_COMMIT=${{env.OSX_CROSS_COMMIT}}"
+      -
+        name: Docker meta
+        id: meta2
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            tkxkd0159/goreleaserx-wasm
+          tags: |
+            type=semver,pattern={{version}},value=${{env.WASMVM_VERSION}}
+      -
+        name: Build and push final images
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          file: ./docker/wasm.Dockerfile
+          tags: ${{ steps.meta2.outputs.tags }}
